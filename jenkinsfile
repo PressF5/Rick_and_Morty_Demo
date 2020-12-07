@@ -1,0 +1,36 @@
+def coder
+def COLOR_MAP = ['SUCCESS': 'good', 'FAILURE': 'danger', 'UNSTABLE': 'warning', 'ABORTED': 'danger']
+
+node{
+    stage('Clone repository.'){
+        git 'https://github.com/PressF5/Rick_and_Morty_Demo.git'
+    }
+    stage('Run tests.'){
+        try{
+            bat 'mvn clean test'
+        } catch(e) {
+            currentBuild.result = "FAILURE"
+            echo e.toString()  
+        }
+        coder = powershell(returnStdout: true, script: 'git log -1 --pretty=format:\'[%an %ae]\'').trim()
+    }
+    stage('Report generation.'){
+        allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
+    }
+    stage('Send report in Slack channel.') {
+        
+        slackSend botUser: true, 
+        channel: 'jenkins',
+        color: COLOR_MAP[currentBuild.currentResult],
+        message: "Name of Job: ${JOB_NAME} | Number of build: ${BUILD_NUMBER} | Result of build: ${currentBuild.currentResult} | Last change: ${coder}",
+        teamDomain: 'Test_slack_jenkins', 
+        tokenCredentialId: 'a5351553-fcd2-478d-a122-8e5ff8c99925'
+        
+        dir("${JENKINS_HOME}/jobs/Rick_and_Morty/builds/${BUILD_NUMBER}/archive") {
+            slackUploadFile channel: 'jenkins', 
+            credentialId: 'a5351553-fcd2-478d-a122-8e5ff8c99925', 
+            filePath: 'allure-report.zip', 
+            initialComment: 'Allure Report.'
+        }
+    }
+}
