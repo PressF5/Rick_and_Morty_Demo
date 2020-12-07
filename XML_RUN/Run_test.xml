@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Rick_and_Morty_Runners" verbose="1" parallel="tests"
+	thread-count="4">
+
+	<test name="Test base url api.">
+		<classes>
+			<class name="runners.RunnerResult" />
+		</classes>
+	</test>
+
+	<test name="Test character api.">
+		<classes>
+			<class name="runners.RunnerCharacter" />
+		</classes>
+	</test>
+
+	<test name="Test location api.">
+		<classes>
+			<class name="runners.RunnerLocation" />
+		</classes>
+	</test>
+
+	<test name="Test episode api.">
+		<classes>
+			<class name="runners.RunnerEpisode" />
+		</classes>
+	</test>
+
+</suite>

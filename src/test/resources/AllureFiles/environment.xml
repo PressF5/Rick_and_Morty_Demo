@@ -1,0 +1,14 @@
+<environment>
+	<parameter>
+		<key>Api</key>
+		<value>https://rickandmortyapi.com/</value>
+	</parameter>
+	<parameter>
+		<key>Documentation</key>
+		<value>https://rickandmortyapi.com/documentation/</value>
+	</parameter>
+	<parameter>
+		<key>About</key>
+		<value>https://rickandmortyapi.com/about/</value>
+	</parameter>
+</environment>
