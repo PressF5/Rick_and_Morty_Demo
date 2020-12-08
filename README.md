@@ -26,10 +26,10 @@ mvn clean test site
 ```
 docker run -it -v [path_to_folder_on_host]:/Rick_and_Morty_Demo/target/allure-report/ bogdan2641/test_rick_and_morty_demo mvn test site
 ```
-[path_to_folder_on_host] - путь, где будет сохранен отчет из контейнера на хост машине.
+[path_to_folder_on_host] - путь, где будет сохранен отчет из контейнера на хост машине.  
 /Rick_and_Morty_API_DEMO_example/target/allure-report/ - путь, где храниться Allure-report в контейнере.
 testbuild - имя Docker образа, на основе которого будет создаваться и запускаться Docker контейнер с тестами.
-mvn test site - команды maven которые будут выполнены внутри контейнера.
+mvn test site - команды maven которые будут выполнены внутри контейнера.  
 
 К примеру
 ```
