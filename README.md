@@ -1,7 +1,8 @@
 # Rick and Morty DEMO
-Это демо тестирования API Rick and Morty.
-Главная страница API Rick and Morty: [API](https://rickandmortyapi.com/)
-Документаци по API: [Документация](https://rickandmortyapi.com/documentation)
+![](https://i.citrus.ua/uploads/bananas/new/funshmot/rick_morty_new_2.jpg)  
+Это демо тестирования API Rick and Morty.  
+Главная страница API Rick and Morty: [API](https://rickandmortyapi.com/)  
+Документаци по API: [Документация](https://rickandmortyapi.com/documentation)  
 
 ### Тесты написанны с использованием следующих технологий:
  - Java
