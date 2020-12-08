@@ -3,7 +3,7 @@
 Главная страница API Rick and Morty: [API](https://rickandmortyapi.com/)
 Документаци по API: [Документация](https://rickandmortyapi.com/documentation)
 
-### Теста написанны с использованием следующих технологий:
+### Тесты написанны с использованием следующих технологий:
  - Java
  - Cucumber
  - TestNG
